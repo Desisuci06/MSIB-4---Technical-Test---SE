@@ -1,0 +1,44 @@
+<?php
+
+	function dense_ranking($scores) {
+
+	    rsort($scores); //urutkan skor dari tertinggi ke terendah
+
+	    $ranks = array();
+
+	    $current_rank = 1;
+
+	    $current_score = -1;
+
+	    foreach ($scores as $score) {
+
+	        if ($score != $current_score) {
+
+	            $current_rank++;
+
+	            $current_score = $score;
+
+	        }
+
+	        $ranks[] = $current_rank;
+
+	    }
+
+	    return $ranks;
+
+	}
+
+	
+
+	$n = 7;
+
+	$scores = array(100, 100, 50, 40, 40, 20, 10);
+
+	$ranks = dense_ranking($scores);
+
+	
+
+	$m = 4;
+
+	$gits_scores = array(5, 25, 50, 120);
+
