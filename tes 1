@@ -1,0 +1,34 @@
+function dense_ranking($scores) {
+
+	    rsort($scores); 
+	    $ranks = array();
+
+	    $current_rank = 1;
+
+	    $current_score = -1;
+
+	    foreach ($scores as $score) {
+
+	        if ($score != $current_score) {
+
+	            $current_rank++;
+
+	            $current_score = $score;
+
+	        }
+
+	        $ranks[] = $current_rank;
+
+	    }
+
+	    return $ranks;
+
+	}
+
+	
+
+	$scores = array(100, 90, 90, 80, 75, 60);
+
+	$ranks = dense_ranking($scores);
+
+	print_r($ranks); 
